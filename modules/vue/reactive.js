@@ -1,3 +1,5 @@
+import { update } from './render';
+
 export default function (vm, data) {
   vm.$data = data();
   for (let key in vm.$data) {
@@ -7,7 +9,8 @@ export default function (vm, data) {
       },
       set(newValue) {
         vm.$data[key] = newValue;
-        // update(vm,key);
+        console.log(vm.$data[key]);
+        update(vm, key);
       },
     });
   }

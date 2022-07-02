@@ -1,5 +1,5 @@
-import { checkExpressionHasDate, checkFunctionHasArgs } from '../shared/utils';
-import { vEvent } from '../shared/propTypes';
+import { checkExpressionHasDate, checkFunctionHasArgs } from './utils';
+import { vEvent } from './propTypes';
 
 export const eventPool = new Map();
 export const expPool = new Map();

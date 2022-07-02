@@ -1,6 +1,8 @@
 import { getFirstChild } from './shared/utils';
 import reactive from './reactive';
 import pools, { eventPool, expPool } from './shared/pools';
+import event from './event';
+import { render } from './render';
 
 const Vue = {
   createApp,
@@ -16,7 +18,8 @@ function createApp(component) {
   const init = () => {
     reactive(vm, data);
     pools(vm, methods);
-    console.log(eventPool, expPool);
+    event(vm);
+    render(vm);
   };
 
   init();
@@ -31,7 +34,7 @@ function createNode(template) {
 }
 
 function mount(el) {
-  console.log(el, this);
+  document.querySelector(el).appendChild(this.$nodes);
 }
 
 export { createApp };

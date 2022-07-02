@@ -11,5 +11,5 @@ module.exports = function (source) {
     refFirstSign,
     '$1 template:' + '`' + template + '`' + ',',
   );
-  console.log(finalScript);
+  return finalScript;
 };
